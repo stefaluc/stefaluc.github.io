@@ -1,2 +1,2 @@
 # Personal Website
-Check it out at [stefaluc.me](www.stefaluc.me)
+Check it out at [stefaluc.me](http://www.stefaluc.me)
