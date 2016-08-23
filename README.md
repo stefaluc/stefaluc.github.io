@@ -1,2 +1,2 @@
 # Personal Website
-Check it out at [stefaluc.io](http://stefaluc.io)
+Check it out at [stefaluc.github.io](https://stefaluc.github.io)
