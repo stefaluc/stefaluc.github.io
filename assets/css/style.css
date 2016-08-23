@@ -1,0 +1,166 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+header {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	background: url("../images/bg.jpg");
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#container {
+	position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 500px;
+    margin: auto;
+	width: 50%;
+	min-width: 300px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	border-radius: 10px;
+	padding: 20px;
+	background-color: rgba(0,0,0, 0.5);
+	animation: 1.5s fadein;
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+	color: white;
+	text-align: center;
+}
+#container h1 {
+	font-size: 36px;
+	margin: 8px;
+}
+#photo {
+	opacity: 0;
+	position: relative;
+    animation: 1s fadeinbottom;
+    animation-delay: 0.5s;
+}
+#photo img { 
+	height: 200px;
+    border-radius: 50%;
+    border: solid 3px white;
+}
+#divider { 
+	margin-bottom: 5px;
+	width: 0;
+	background-color: white;
+	height: 2px;
+	box-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+	animation: 1s grow;
+	animation-delay: 0.5s;
+}
+#description { 
+	padding-top: 4px;
+	width: 70%;
+	font-size: 17px;
+}
+#links {
+	width: 50%;
+	min-width: 200px;
+	padding-top: 20px;
+	display: flex;
+	flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.link {
+    font-size: 48px;
+    position: relative;
+    opacity: 0;
+    animation: 1s fadeintop;
+    animation-delay: 0.5s;
+}
+.link .tooltiptext {
+    visibility: hidden;
+    background-color: black;
+    color: white;
+    width: 100px;
+    background-color: rgba(0,0,0, 0.5);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.7);
+    font-size: 16px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -50px;
+    opacity: 0;
+    transition: opacity .5s;
+}
+.link .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0,0,0,.5) transparent;
+}
+
+.link:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+.custom-icon {
+	color: #FFF;
+	transition: 0.5s color;
+}
+.linkedin:hover {
+	color:#0077b5;
+}
+.resume:hover {
+	color:#AAA;
+}
+.github:hover {
+	color:#4183c4;
+}
+@keyframes fadein {
+	from { 
+		opacity: 0;
+	}
+	to { 
+		opacity: 1;
+	}
+}
+@keyframes fadeintop {
+	from { 
+		opacity: 0;
+		top: 8px;
+	}
+	to { 
+		opacity: 1;
+		top: 0px;
+	}
+}
+@keyframes fadeinbottom {
+	from { 
+		opacity: 0;
+		bottom: 8px;
+	}
+	to { 
+		opacity: 1;
+		bottom: 0px;
+	}
+}
+
+@keyframes grow {
+	from { 
+		width: 0;
+	}
+	to { 
+		width: 50%;
+	}
+}
