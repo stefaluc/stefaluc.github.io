@@ -1,3 +1,7 @@
+$(document).ready(function(){
+	$('.slider').slider({full_width: true});
+});
+
 window.onload = function() {
 	setTimeout(function() {
 		document.querySelectorAll('.link')[0].style.opacity = '1';
@@ -8,3 +12,11 @@ window.onload = function() {
 		document.getElementById('divider').style.width = '50%';
 	}, 1000);
 }
+
+$('.arrow-next').click(function() {
+	$('.slider').slider('next');
+});
+
+$('.arrow-prev').click(function() {
+	$('.slider').slider('prev');
+});
