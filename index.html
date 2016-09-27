@@ -6,49 +6,104 @@
 	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link rel='shortcut icon' href='assets/images/favicon.ico' type='image/x-icon'/ >
-
-	<script src="assets/js/main.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+	<script src="bower_components/react/react.js"></script>
+    <script src="bower_components/react/react-dom.js"></script>
+    <script src="bower_components/babel/browser.min.js"></script>
+	
 	<title>Lucas Stefanski</title>
 </head>
 <body>
-	<div class='arrow-container'>
-	</div>
+	<div id="container"></div>
 
-	<div id='container'>
-		<div id='photo'>
-			<img src="assets/images/me.jpg">
-		</div>
-		<h1>Lucas Stefanski</h1>
-		<div id="divider"></div>
-		<div id="description">
-			Studying Computer Science with a Certificate in Mathematics at the University of Wisconsin - Madison. Lover of all things technology, science, and math. Get to know me better at the links below.
-		</div>
-		<div id="links">
-			<div class="link">
-		        <a href="assets/resume.pdf" target="blank"><i class="ion-android-document custom-icon resume"></i></a>
-		      	<span class="tooltiptext">Resume</span>
-			</div>
-			<div class="link">
-				<a href="https://github.com/stefaluc" target="blank"><i class="ion-social-github custom-icon github"></i></a>
-				<span class="tooltiptext">Github</span>
-			</div>
-			<div class="link">
-		        <a href="mailto:stefaluc000@gmail.com" target="top"><i class="ion-email custom-icon email"></i></a>
-		      	<span class="tooltiptext">Email</span>
-			</div>
-			<div class="link">
-				<a href="https://www.linkedin.com/in/lucas-stefanski-364889126" target="blank"><i class="ion-social-linkedin custom-icon linkedin"></i></a>
-				<span class="tooltiptext">LinkedIn</span>
-			</div>
-		</div>
-	</div>
+	<script type="text/babel">
+	window.onload = function() {
+		setTimeout(function() {
+			document.querySelectorAll('.link')[0].style.opacity = '1';
+			document.querySelectorAll('.link')[1].style.opacity = '1';
+			document.querySelectorAll('.link')[2].style.opacity = '1';
+			document.querySelectorAll('.link')[3].style.opacity = '1';
+			document.getElementById('photo').style.opacity = '1';
+			document.getElementById('divider').style.width = '50%';
+		}, 1000);
+	}
 
-	<div class='arrow-container'>
-		<div class='arrow-next'></div>
-	</div>
+	var Main = React.createClass({
+		getInitialState: function() {
+			return {
+				progression: 0
+			};
+		},
 
-	<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+		next: function() {
+			console.log(this.state.progression++);
+			this.setState({
+				progression: this.state.progression++
+			});
+		},
+
+		prev: function() {
+			this.setState({
+				progression: this.state.progression++
+			});
+		},
+
+		render: function() {
+			var components;
+			var state = this.state.progression;
+			console.log(state);
+			if(state === 0) {
+				components = (
+					<div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+					<div className='arrow-container'>
+					</div>
+					<div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center', flex: '10 0 0'}}>
+						<div id='photo'>
+							<img src="assets/images/me.jpg" />
+						</div>
+						<h1>Lucas Stefanski</h1>
+						<div id="divider"></div>
+						<div id="description">
+							Studying Computer Science with a Certificate in Mathematics at the University of Wisconsin - Madison. Lover of all things technology, science, and math. Get to know me better at the links below.
+						</div>
+						<div id="links">
+							<div className="link">
+						        <a href="assets/resume.pdf" target="blank"><i className="ion-android-document custom-icon resume"></i></a>
+						      	<span className="tooltiptext">Resume</span>
+							</div>
+							<div className="link">
+								<a href="https://github.com/stefaluc" target="blank"><i className="ion-social-github custom-icon github"></i></a>
+								<span className="tooltiptext">Github</span>
+							</div>
+							<div className="link">
+						        <a href="mailto:stefaluc000@gmail.com" target="top"><i className="ion-email custom-icon email"></i></a>
+						      	<span className="tooltiptext">Email</span>
+							</div>
+							<div className="link">
+								<a href="https://www.linkedin.com/in/lucas-stefanski-364889126" target="blank"><i className="ion-social-linkedin custom-icon linkedin"></i></a>
+								<span className="tooltiptext">LinkedIn</span>
+							</div>
+						</div>
+					</div>
+					<div className='arrow-container'>
+						<div className='arrow-next' onClick={this.next}></div>
+					</div>
+					</div>
+				);
+			}
+			else if(state == 1) {
+				console.log('reach state 1');
+				components = (
+					<div>asdad</div>
+				);
+			}
+			return components;
+		}
+	});
+
+	ReactDOM.render(<Main />, document.getElementById('container'));
+</script>
 </body>
 </html>
