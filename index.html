@@ -21,9 +21,6 @@
 	<div id="container" class="animated fadeIn"></div>
 
 	<script type="text/babel">
-	window.onload = function() {
-		
-	}
 
 	var Main = React.createClass({
 		getInitialState: function() {
@@ -73,22 +70,22 @@
 							</div>
 							<div id="links">
 								<div className="link">
-							        <a href="assets/resume.pdf" target="blank" className="hint--top hint--rounded hint--medium hint--warning" aria-label='Resume'><i className="ion-android-document custom-icon resume"></i></a>
+							        <a href="assets/resume.pdf" target="blank" className="hint--top hint--rounded hint--medium hint--error" aria-label='Resume'><i className="ion-android-document custom-icon resume"></i></a>
 							      	
 								</div>
 								<div className="link">
-									<a href="https://github.com/stefaluc" target="blank" className="hint--top hint--rounded hint--medium hint--warning" aria-label='Github'><i className="ion-social-github custom-icon github"></i></a>
+									<a href="https://github.com/stefaluc" target="blank" className="hint--top hint--rounded hint--medium hint--error" aria-label='Github'><i className="ion-social-github custom-icon github"></i></a>
 								</div>
 								<div className="link">
-							        <a href="mailto:stefaluc000@gmail.com" target="top" className="hint--top hint--rounded hint--medium hint--warning" aria-label='Email Me'><i className="ion-email custom-icon email"></i></a>
+							        <a href="mailto:stefaluc000@gmail.com" target="top" className="hint--top hint--rounded hint--medium hint--error" aria-label='Email Me'><i className="ion-email custom-icon email"></i></a>
 								</div>
 								<div className="link">
-									<a href="https://www.linkedin.com/in/lucas-stefanski-364889126" target="blank" className="hint--top hint--rounded hint--medium hint--warning" aria-label='Linkedin'><i className="ion-social-linkedin custom-icon linkedin"></i></a>
+									<a href="https://www.linkedin.com/in/lucas-stefanski-364889126" target="blank" className="hint--top hint--rounded hint--medium hint--error" aria-label='Linkedin'><i className="ion-social-linkedin custom-icon linkedin"></i></a>
 								</div>
 							</div>
 						</div>
 						<div className='arrow-container'>
-							<div className='hint--top hint--rounded hint--medium hint--warning' aria-label='My Projects' style={{padding:'15px'}}>
+							<div className='hint--top hint--rounded hint--medium hint--error' aria-label='My Projects' style={{padding:'15px'}}>
 							<div className='arrow-next' onClick={this.next}></div>
 							</div>
 						</div>
@@ -99,19 +96,22 @@
 				components = (
 					<div style={{display: 'flex', width: '100%', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
 						<div className='arrow-container'>
+							<div className='hint--top hint--rounded hint--medium hint--error' aria-label='Home' style={{padding:'15px'}}>
 							<div className='arrow-prev' onClick={this.prev}></div>
+							</div>
 						</div>
 						<div className='projects'>
-							<img src="assets/images/cor.png" width='175px' height='175px' />
-							<h1>CGI or Real?</h1>
-							<div id="divider" className="animated zoomIn"></div>
-							<div>Single page web application that quizzes you on whether an image is CGI or real and keeps track of scoring data</div>
+							<a href="https://github.com/stefaluc/cgi-or-real"><img src="assets/images/cor.png" width='175px' height='175px' className="animated flipInX" /></a>
+							<h1 className="animated flipInX">CGI or Real?</h1>
+							<div id="divider2" className="animated zoomIn"></div>
+							<div className="animated flipInX">Single page web application that quizzes you on whether an image is CGI or Real and keeps track of scoring data. Built in JavaScript using React.js, Node.js, and Express.Js.
+							</div>
 						</div>
 						<div className='projects'>
-							<img src="assets/images/raag.png" width='175px' height='175px' />
-							<h1>Reddit at a Glance</h1>
-							<div id="divider" className="animated zoomIn"></div>
-							<div>Chrome extension that allows you to look at the reddit front page from anywhere and notifies you when there are new posts</div>
+							<a href="https://github.com/stefaluc/reddit-at-a-glance"><img src="assets/images/raag.png" width='175px' height='175px' className="animated flipInX" /></a>
+							<h1 className="animated flipInX">reddit at a Glance</h1>
+							<div id="divider2" className="animated zoomIn"></div>
+							<div className="animated flipInX">Chrome extension that allows you to look at the reddit front page from anywhere and notifies you when there are new posts. Built in JavaScript using JQuery and AJAX. </div>
 						</div>
 						<div className='arrow-container'></div>
 					</div>
