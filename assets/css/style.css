@@ -3,8 +3,9 @@ body {
 	width: 100vw;
 	height: 100vh;
 	margin: 0;
-	background: url("../images/bg.jpg");
+	background: url("../images/bg-full.jpg");
 	background-size: cover;
+	background-position: center;
 	display: flex;
 	justify-content: center;
 	align-items: center;
