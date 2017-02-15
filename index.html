@@ -30,12 +30,14 @@
 		},
 
 		next: function() {
+            console.log(this.state.progression++);
 			this.setState({
 				progression: this.state.progression++
 			});
 		},
 
 		prev: function() {
+            console.log(this.state.progression--);
 			this.setState({
 				progression: this.state.progression--
 			});
