@@ -35,9 +35,31 @@ body {
 	text-align: center;
 	transition: height 1s;
 }
-#container h1 {
-	font-size: 36px;
-	margin: 8px;
+
+#container .name {
+  font-size: 36px;
+  margin: 8px;
+}
+
+@media all and (min-width: 960px) {
+  #container h1 {
+    font-size: 36px;
+    margin: 8px;
+  }
+}
+
+@media all and (max-width: 959px) and (min-width: 600px) {
+  #container h1 {
+    font-size: 2vw;
+    margin: 8px;
+  }
+}
+
+@media all and (max-width: 599px) and (min-width: 50px) {
+  #container h1 {
+    font-size: 3vw;
+    margin: 8px;
+  }
 }
 
 .arrow-container {
@@ -78,8 +100,10 @@ body {
 	display: flex; 
 	flex-direction: column;
 	flex: 5 0 0;
+  width: 30%;
 	align-items: center;
 	text-align: center;
+  padding: 5px;
 }
 
 #photo {
